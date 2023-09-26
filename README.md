@@ -4,13 +4,13 @@ Image colorization using autoencoders is an innovative approach that infuses gra
 
 ## Data Preparation
 
-![training dataset](https://github.com/pooranjoyb/Autoencoder-Colorization/assets/90945182/e1f5d7c8-bbba-4004-8ffb-5d37a948621a)
+![training dataset](https://github.com/pooranjoyb/Autoencoder-Colorization/blob/master/data/images/dataset.png)
 
 For this project, a suitable dataset of grayscale images and their corresponding color versions is required. The dataset should be preprocessed to ensure compatibility with the model architecture. This process may include resizing, normalization, and splitting into training and validation sets.
 
 ## Model Architecture
 
-<img src="https://github.com/pooranjoyb/Autoencoder-Colorization/assets/90945182/80283ce9-445b-4850-9810-c5397e90e0a7" width="50%" />
+<img src="https://github.com/pooranjoyb/Autoencoder-Colorization/blob/master/data/images/architecture.png" width="50%" alt="Architecture"></img>
 
 - **The Encoder architecture** is a convolutional neural network segment designed for image feature extraction.
 - It begins with an input layer accommodating (120, 120, 3) images. Each convolutional layer is accompanied by batch normalization and max pooling.
@@ -22,13 +22,13 @@ unfolds with batch normalization. Conv2DTranspose layers reverse convolution, ex
 ## Model Training
 The training phase involves optimizing the model's parameters to minimize the difference between the predicted colorized images and the ground truth color images. This is achieved by feeding the grayscale images into the autoencoder and adjusting the weights. 
 
-<img src="https://github.com/pooranjoyb/Autoencoder-Colorization/assets/90945182/8e3defa7-7109-4ad3-aafa-14f167dd1392" width="50%" />
+<img src="https://github.com/pooranjoyb/Autoencoder-Colorization/blob/master/data/images/train.png" width="50%" />
 
 - The model was trained with an optimal 14 epochs and with 120 x 120 grayscale and color landscape image sets.
 
 ### Sample Output
 
-![output](https://github.com/pooranjoyb/Autoencoder-Colorization/assets/90945182/61f86ad4-8d30-406f-ac96-642efb818677)
+![output](https://github.com/pooranjoyb/Autoencoder-Colorization/blob/master/data/images/output.png)
 
 ## Dependencies
 

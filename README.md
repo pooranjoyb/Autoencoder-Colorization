@@ -1,33 +1,34 @@
 # Image Colorization: Autoencoder
 
-Image colorization using autoencoders is an innovative approach that infuses grayscale images with vibrant hues. Autoencoders, a type of neural network, learn to encode and decode images, forming an internal representation of input data.
-
-## Table of Contents
-
-- [Introduction](#image-colorization-autoencoder)
-- [Project Overview](#project-overview)
-- [Data Preparation](#data-preparation)
-- [Model Architecture](#model-architecture)
-- [Model Training](#model-training)
-- [Dependencies](#dependencies)
-- [Usage](#usage)
-- [License](#license)
-
-## Project Overview
-
-The aim of this project is to automatically add color to grayscale images using an autoencoder architecture. The process involves several steps, including data preparation, defining the model architecture, training the model, and deploying it for practical use.
+Image colorization using autoencoders is an innovative approach that infuses grayscale images with vibrant hues. Autoencoders, a type of neural network, learn to encode and decode images, forming an internal representation of input data. The aim of this project is to automatically add color to grayscale images using an autoencoder architecture. The process involves several steps, including data preparation, defining the model architecture, training the model, and deploying it for practical use.
 
 ## Data Preparation
+
+![training dataset](https://github.com/pooranjoyb/Autoencoder-Colorization/assets/90945182/e1f5d7c8-bbba-4004-8ffb-5d37a948621a)
 
 For this project, a suitable dataset of grayscale images and their corresponding color versions is required. The dataset should be preprocessed to ensure compatibility with the model architecture. This process may include resizing, normalization, and splitting into training and validation sets.
 
 ## Model Architecture
 
-The autoencoder architecture consists of an encoder and a decoder. The encoder reduces the dimensionality of the input grayscale image, extracting essential features. The decoder then uses these features to reconstruct the colorized version of the image. The specific architecture details, such as layer sizes, activation functions, and loss functions, are defined in the code.
+<img src="https://github.com/pooranjoyb/Autoencoder-Colorization/assets/90945182/80283ce9-445b-4850-9810-c5397e90e0a7" width="50%" />
+
+- **The Encoder architecture** is a convolutional neural network segment designed for image feature extraction.
+- It begins with an input layer accommodating (120, 120, 3) images. Each convolutional layer is accompanied by batch normalization and max pooling.
+- Sequentially, the number of filters increases (64, 128, 256, 512), enabling hierarchical feature capture.
+- This architecture progressively abstracts image features for image colorization, providing efficient information encapsulation through its layers.
+- Then, **Decoder**, a pivotal component of the Autoencoder, reconstructs images from a compact  representation. Initiated by an input layer shaped to match the Encoder's output, the architecture 
+unfolds with batch normalization. Conv2DTranspose layers reverse convolution, expanding the representation with strides of 2 and batch normalization.
 
 ## Model Training
+The training phase involves optimizing the model's parameters to minimize the difference between the predicted colorized images and the ground truth color images. This is achieved by feeding the grayscale images into the autoencoder and adjusting the weights. 
 
-The training phase involves optimizing the model's parameters to minimize the difference between the predicted colorized images and the ground truth color images. This is achieved by feeding the grayscale images into the autoencoder and adjusting the weights.
+<img src="https://github.com/pooranjoyb/Autoencoder-Colorization/assets/90945182/8e3defa7-7109-4ad3-aafa-14f167dd1392" width="50%" />
+
+- The model was trained with an optimal 14 epochs and with 120 x 120 grayscale and color landscape image sets.
+
+### Sample Output
+
+![output](https://github.com/pooranjoyb/Autoencoder-Colorization/assets/90945182/61f86ad4-8d30-406f-ac96-642efb818677)
 
 ## Dependencies
 
@@ -49,6 +50,8 @@ This project uses Streamlit for deployment. Streamlit is a web application frame
 ```bash
 streamlit run app.py
 ```
+
+**You can also click [here](https://image-colorizer.onrender.com/) to view the deployment**
 
 ## License 
 

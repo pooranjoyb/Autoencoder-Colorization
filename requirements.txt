@@ -4,3 +4,4 @@ numpy
 pandas
 Pillow
 tensorflow
+protobuf==3.20.*
